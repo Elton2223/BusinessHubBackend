@@ -1,8 +1,7 @@
-import {model, property} from '@loopback/repository';
-import {Register} from '.';
+import {Entity, model, property} from '@loopback/repository';
 
 @model()
-export class Postjob extends Register {
+export class Postjob extends Entity {
   @property({
     type: 'number',
     id: true,
