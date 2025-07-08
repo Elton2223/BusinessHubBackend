@@ -119,6 +119,16 @@ export class Jobhub extends Entity {
   })
   dateFinished?: Date;
 
+  @property({
+    type: 'string',
+  })
+  review: string;
+
+  @property({
+    type: 'number',
+  })
+  reviewRating: number;
+
   constructor(data?: Partial<Jobhub>) {
     super(data);
   }
