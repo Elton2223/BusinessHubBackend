@@ -1,7 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model({settings: {strict: false}})
-export class Register extends Entity {
+@model()
+export class UserManagement extends Entity {
   @property({
     type: 'number',
     id: true,
@@ -40,7 +40,37 @@ export class Register extends Entity {
   @property({
     type: 'number',
   })
-  contacts?: number;
+  phone_number?: number;
+
+  @property({
+    type: 'string',
+  })
+  street_address?: string;
+
+  @property({
+    type: 'string',
+  })
+  city?: string;
+
+  @property({
+    type: 'string',
+  })
+  state?: string;
+
+  @property({
+    type: 'string',
+  })
+  postal_code?: string;
+
+  @property({
+    type: 'string',
+  })
+  country?: string;
+
+  @property({
+    type: 'string',
+  })
+  identification_doc?: string;
 
   @property({
     type: 'number',
@@ -54,28 +84,18 @@ export class Register extends Entity {
 
   @property({
     type: 'string',
-  })
-  identification_doc?: string;
-
-  @property({
-    type: 'string',
     required: true,
   })
   password: string;
 
-  // Define well-known properties here
 
-  // Indexer property to allow additional data
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [prop: string]: any;
-
-  constructor(data?: Partial<Register>) {
+  constructor(data?: Partial<UserManagement>) {
     super(data);
   }
 }
 
-export interface RegisterRelations {
+export interface UserManagementRelations {
   // describe navigational properties here
 }
 
-export type RegisterWithRelations = Register & RegisterRelations;
+export type UserManagementWithRelations = UserManagement & UserManagementRelations;

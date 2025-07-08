@@ -1,2 +1,2 @@
-export * from './register.model';
-export * from './postjob.model';
+export * from './user-management.model';
+export * from './jobhub.model';
