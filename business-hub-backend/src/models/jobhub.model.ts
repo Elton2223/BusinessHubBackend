@@ -96,6 +96,29 @@ export class Jobhub extends Entity {
   })
   registerId?: number;
 
+  @property({
+    type: 'date',
+    mysql : {
+      columnName: 'dateCreated',
+      dataType: 'datetime',
+      nullable: 'Y',
+      default: () => 'CURRENT_TIMESTAMP',
+    }
+  })
+  dateCreated?: Date;
+
+  @property({
+    type: 'date',
+    required: true,
+  })
+  dateAccepted?: Date;
+
+  @property({
+    type: 'date',
+    required: true,
+  })
+  dateFinished?: Date;
+
   constructor(data?: Partial<Jobhub>) {
     super(data);
   }
