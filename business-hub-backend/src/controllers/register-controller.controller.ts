@@ -20,7 +20,7 @@ import {
 import {Register} from '../models';
 import {RegisterRepository} from '../repositories';
 
-export class RegisterControllerController {
+export class Register_Controller{
   constructor(
     @repository(RegisterRepository)
     public registerRepository : RegisterRepository,

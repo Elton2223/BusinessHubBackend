@@ -20,7 +20,7 @@ import {
 import {Postjob} from '../models';
 import {PostjobRepository} from '../repositories';
 
-export class PostjobControllerController {
+export class Postjob_Controller{
   constructor(
     @repository(PostjobRepository)
     public postjobRepository : PostjobRepository,
