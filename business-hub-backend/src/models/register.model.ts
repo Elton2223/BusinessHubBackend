@@ -40,6 +40,11 @@ export class Register extends Entity {
   @property({
     type: 'number',
   })
+  contacts?: number;
+
+  @property({
+    type: 'number',
+  })
   latitude?: number;
 
   @property({
