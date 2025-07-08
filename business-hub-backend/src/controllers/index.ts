@@ -1,2 +1,2 @@
-export * from './register-controller.controller';
-export * from './postjob-controller.controller';
+export * from './user-management.controller';
+export * from './job-hub.controller';

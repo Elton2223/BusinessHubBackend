@@ -1,16 +1,16 @@
 import {inject} from '@loopback/core';
 import {DefaultCrudRepository} from '@loopback/repository';
 import {BusinesshubdbDataSource} from '../datasources';
-import {Postjob, PostjobRelations} from '../models';
+import {Jobhub, JobhubRelations} from '../models';
 
-export class PostjobRepository extends DefaultCrudRepository<
-  Postjob,
-  typeof Postjob.prototype.id,
-  PostjobRelations
+export class JobhubRepository extends DefaultCrudRepository<
+  Jobhub,
+  typeof Jobhub.prototype.id,
+  JobhubRelations
 > {
   constructor(
     @inject('datasources.businesshubdb') dataSource: BusinesshubdbDataSource,
   ) {
-    super(Postjob, dataSource);
+    super(Jobhub, dataSource);
   }
 }

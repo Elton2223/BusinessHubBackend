@@ -1,2 +1,2 @@
-export * from './register.repository';
-export * from './postjob.repository';
+export * from './user-management.repository';
+export * from './jobhub.repository';
