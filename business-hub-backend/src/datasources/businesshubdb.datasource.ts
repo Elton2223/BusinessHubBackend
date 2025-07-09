@@ -5,10 +5,10 @@ const config = {
   name: 'businesshubdb',
   connector: 'mysql',
   url: '',
-  host: 'localhost',
+  host: '64.226.97.116',
   port: 3306,
-  user: 'root',
-  password: '',
+  user: 'Admin',
+  password: 'Vit2024#',
   database: 'businesshubdb'
 };
 
