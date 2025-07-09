@@ -6,7 +6,7 @@ const config = {
   connector: 'mysql',
   host: '64.226.97.116',
   port: 3306,
-  user: 'Admin',
+  user: 'root',
   password: 'Vit2024#',
   database: 'businesshubdb'
 };
