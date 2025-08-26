@@ -4,10 +4,10 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'businesshubdb',
   connector: 'mysql',
-  host: '64.226.97.116',
+  host: 'localhost',
   port: 3306,
-  user: 'Admin',
-  password: 'Vit2024#',
+  user: 'root',
+  password: '',
   database: 'businesshubdb'
 };
 
