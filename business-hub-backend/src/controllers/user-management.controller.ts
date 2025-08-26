@@ -47,6 +47,78 @@ export class UserManagementController {
     return this.userManagementRepository.create(userManagement);
   }
 
+  @post('/user-management/login')
+  @response(200, {
+    description: 'User login',
+    content: {
+      'application/json': {
+        schema: {
+          type: 'object',
+          properties: {
+            success: {type: 'boolean'},
+            message: {type: 'string'},
+            user: {type: 'object'},
+          },
+        },
+      },
+    },
+  })
+  async login(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: {
+            type: 'object',
+            required: ['email', 'password'],
+            properties: {
+              email: {type: 'string'},
+              password: {type: 'string'},
+            },
+          },
+        },
+      },
+    })
+    credentials: {email: string; password: string},
+  ): Promise<{success: boolean; message: string; user?: any}> {
+    try {
+      // Find user by email
+      const users = await this.userManagementRepository.find({
+        where: {email: credentials.email},
+      });
+
+      if (users.length === 0) {
+        return {
+          success: false,
+          message: 'User not found',
+        };
+      }
+
+      const user = users[0];
+
+      // Check password
+      if (user.password !== credentials.password) {
+        return {
+          success: false,
+          message: 'Invalid password',
+        };
+      }
+
+      // Return user data (excluding password for security)
+      const {password, ...userWithoutPassword} = user;
+      
+      return {
+        success: true,
+        message: 'Login successful',
+        user: userWithoutPassword,
+      };
+    } catch (error) {
+      return {
+        success: false,
+        message: 'Login failed',
+      };
+    }
+  }
+
   @get('/user-management/count')
   @response(200, {
     description: 'UserManagement model count',
