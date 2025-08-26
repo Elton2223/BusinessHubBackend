@@ -47,8 +47,6 @@ export class UserManagementController {
     return this.userManagementRepository.create(userManagement);
   }
 
-<<<<<<< Updated upstream
-=======
   @post('/user-management/login')
   @response(200, {
     description: 'User login',
@@ -201,7 +199,6 @@ export class UserManagementController {
     }
   }
 
->>>>>>> Stashed changes
   @get('/user-management/count')
   @response(200, {
     description: 'UserManagement model count',
